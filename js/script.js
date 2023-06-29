@@ -1,29 +1,54 @@
-let btn = document.getElementById('calc')
+dados = document.querySelector('#myForm')
 
-btn.addEventListener("click", function(){
+dados.addEventListener('submit', function(event){
 
-    let peso = document.getElementById('peso').value
-    let altura = document.getElementById('altura').value
+    event.preventDefault()
 
-    let imc = peso / (altura / 100) * (altura / 100)
+    resultado = document.querySelector('.resultado')
+    msg = document.querySelector('#msg')
 
-    if (imc < 18.5) {
-     
-        document.getElementById("resultado").style.backgroundColor = "--abaixo";
-        document.getElementById("resultado").innerHTML = ('Abaixo do peso');
+    inputPeso = event.target.querySelector('#peso')
+    inputAltura = event.target.querySelector('#altura')
 
-    } else if (imc >= 18.5 && imc < 25) {
+    peso = Number(inputPeso.value)
+    altura = Number(inputAltura.value)
+    altura = altura / 100
 
-        document.getElementById("resultado").style.backgroundColor = "--pesonormal";
+    imcClass = ['Abaixo do peso', 'Peso ideal', 'Sobrepeso', 'Obesidade']
+    
+    imc = peso / altura ** 2
 
-    } else if (imc >= 25 && imc < 30) {
+    if(imc < 18.5){
 
-        document.getElementById("resultado").style.backgroundColor = "--sobrepeso";
+        resultado.style.display = 'flex'
+        resultado.style.backgroundColor = '#6db5e8'
+        msg.innerHTML = `Seu ICM é: ${imc.toFixed(2)} (${imcClass[0]})`
 
-    } else {
 
-        document.getElementById("resultado").style.backgroundColor = "--obesidadeIII";
-        
+    } if(imc >= 18.6){
+
+        resultado.style.display = 'flex'
+        resultado.style.backgroundColor = '#7ec395'
+        msg.innerHTML = `Seu ICM é: ${imc.toFixed(2)} (${imcClass[1]})`
+
+    } if(imc >= 25){
+
+        resultado.style.display = 'flex'
+        resultado.style.backgroundColor = '#f8e551'
+        msg.innerHTML = `Seu ICM é: ${imc.toFixed(2)} (${imcClass[2]})`
+
+    } if(imc >= 40){
+
+        resultado.style.display = 'flex'
+        resultado.style.backgroundColor = '#de4d55'
+        msg.innerHTML = `Seu ICM é: ${imc.toFixed(2)} (${imcClass[3]})`
+
     }
+
+})
+
+dados.addEventListener('reset', function(){
+
+    window.location.reload(true);
 
 })

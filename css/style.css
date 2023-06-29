@@ -107,7 +107,12 @@ label{
 
 .resultado{
 
-    width: 300px;
+    flex-wrap: wrap;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
     height: 100px;
     background-color: red;
 
