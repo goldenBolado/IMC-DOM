@@ -9,7 +9,7 @@
 </head>
 
 <header>
-    
+
     <figure>
 
         <img class = 'logo' src="./images/wawa-cat-wawa.gif" alt="logo"></header>
@@ -18,51 +18,53 @@
 
 </header>
 
-<h1>Calculadora de IMC</h1>
+<h1><center>Calculadora de IMC</h1>
 
 <body>
-    
+
     <section class="container">
 
        <main>
 
             <section>
 
-                <form action="">
+            <div class="corpo">
+
+            <div class="base">
+
+            <div class="parte1">
+                <form action="" id = 'myForm'>
 
                     <label for="peso">Peso</label>
-                    <input type="text" name="peso" id="peso">
+                    <input type="number" name="peso" id = 'peso' placeholder="Coloque o peso em kg">
 
                     <label for="altura">Altura</label>
-                    <input type="text" name="altura" id="altura">
+                    <input type="number" name="altura" id = 'altura' placeholder="Coloque a altura em cm">
+            <div class="parte05">
+                    <button type="submit" class = 'botao' id = 'calc'>CALCULAR</button>
+                    <button type="reset" class = 'botao'>LIMPAR</button>
+            </div>
+        </div>
 
-                    <button type="submit">CALCULAR</button>
-                    <button type="reset">LIMPAR</button>
-
+            <div class="parte2">
+            <img src="images/IMC_ratio.png" alt="">
+            </div>
                 </form>
 
             </section>
+        
+            <section class = 'resultado'>
 
-            <aside>
 
-                <figure>
 
-                    <img src="./images/" alt="tabela" title="tabela_imc">
-
-                </figure>
-
-                <section>
-
-                    
-
-                </section>
-
-            </aside>
+            </section>
 
        </main>
+       </div>
+       </div>
 
     </section>
-    
+
     <script src="./js/script.js"></script>
 
 </body>
